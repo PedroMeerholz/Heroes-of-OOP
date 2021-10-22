@@ -1,16 +1,8 @@
-public class Machado {
-    private int adicionalAtaque = 17;
-    private int adicionalDefesa = 8;
+public class Machado extends Arma {
     
     public Machado(){
-
-    }
-
-    public int getAdicionalAtaque(){
-        return this.adicionalAtaque;
-    }
-
-    public int getAdicionalDefesa(){
-        return this.adicionalDefesa;
+        super();
+        setAdicionalAtaque(17);
+        setAdicionalDefesa(8);
     }
 }

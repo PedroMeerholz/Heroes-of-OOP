@@ -1,16 +1,8 @@
-public class Balestra {
-    private int adicionalAtaque = 15;
-    private int adicionalDefesa = 10;
+public class Balestra extends Arma {
 
-    public Balestra(){
-
-    }
-
-    public int getAdicionalAtaque(){
-        return this.adicionalAtaque;
-    }
-
-    public int getAdicionalDefesa(){
-        return this.adicionalDefesa;
+    public Balestra() {
+        super();
+        setAdicionalAtaque(15);
+        setAdicionalDefesa(10);
     }
 }
