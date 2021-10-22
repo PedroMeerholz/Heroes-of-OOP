@@ -1,21 +1,11 @@
-public class Arqueiro {
-    private int pontosDeAtaque = 20;
-    private float pontosDeDefesa = 30;
-    private float pontosDeVida = 160;
+public class Arqueiro extends Personagem {
 
-    public Arqueiro(){
-
+    public Arqueiro(String nomePersonagem) {
+        super(nomePersonagem);
+        setPontosDeAtaque(20);
+        setPontosDeDefesa(30);
+        setPontosDeDefesa(160);
     }
 
-    public int getPontosDeAtaque(){
-        return this.pontosDeAtaque;
-    }
 
-    public float getPontosDeDefesa(){
-        return this.pontosDeDefesa;
-    }
-
-    public float getPontosDeVida(){
-        return this.pontosDeVida;
-    }
 }
