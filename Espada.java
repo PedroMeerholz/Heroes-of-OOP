@@ -1,7 +1,7 @@
 public class Espada extends Arma {
 
-    public Espada(){
-        super();
+    public Espada(String nomeArma){
+        super(nomeArma);
         setAdicionalAtaque(10);
         setAdicionalDefesa(15);
     }

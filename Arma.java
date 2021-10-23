@@ -1,9 +1,18 @@
 public class Arma {
+    protected String nomeArma;
     protected int adicionalAtaque;
     protected int adicionalDefesa;
 
-    public Arma() {
+    public Arma(String nomeArma) {
+        setNomeArma(nomeArma);
+    }
 
+    public void setNomeArma(String nomeArma) {
+        this.nomeArma = nomeArma;
+    }
+
+    public String getNomeArma() {
+        return this.nomeArma;
     }
 
     public void setAdicionalAtaque(int adicionalAtaque) {
