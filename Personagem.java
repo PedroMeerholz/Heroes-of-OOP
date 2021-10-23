@@ -3,9 +3,11 @@ public class Personagem {
     protected int pontosDeAtaque;
     protected float pontosDeDefesa;
     protected float pontosDeVida;
+    protected Arma armaUtilizada;
 
-    public Personagem(String nomePersonagem) {
+    public Personagem(String nomePersonagem, Arma armaUtilizada) {
         setNomePersonagem(nomePersonagem);
+        setArmaUtilizada(armaUtilizada);
     }
 
     public void setNomePersonagem(String nomePersonagem) {
@@ -38,5 +40,13 @@ public class Personagem {
 
     public float getPontosDeVida() {
         return this.pontosDeVida;
+    }
+
+    public void setArmaUtilizada(Arma armaUtilizada) {
+        this.armaUtilizada = armaUtilizada;
+    }
+
+    public String getArmaUtilizada() {
+        return armaUtilizada.getNomeArma();
     }
 }
