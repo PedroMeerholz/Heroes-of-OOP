@@ -3,8 +3,8 @@ public class Arma {
     protected int adicionalAtaque;
     protected int adicionalDefesa;
 
-    public Arma(String nomeArma) {
-        setNomeArma(nomeArma);
+    public Arma() {
+
     }
 
     public void setNomeArma(String nomeArma) {

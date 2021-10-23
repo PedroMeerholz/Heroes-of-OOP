@@ -1,7 +1,8 @@
 public class Machado extends Arma {
     
-    public Machado(String nomeArma){
-        super(nomeArma);
+    public Machado(){
+        super();
+        setNomeArma("Machado");
         setAdicionalAtaque(17);
         setAdicionalDefesa(8);
     }

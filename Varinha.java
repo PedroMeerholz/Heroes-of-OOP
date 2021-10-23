@@ -1,7 +1,8 @@
 public class Varinha extends Arma {
 
-    public Varinha(String nomeArma){
-        super(nomeArma);
+    public Varinha(){
+        super();
+        setNomeArma("Varinha");
         setAdicionalAtaque(16);
         setAdicionalDefesa(9);
     }
