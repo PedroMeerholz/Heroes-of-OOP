@@ -19,7 +19,7 @@ public class Personagem {
     }
 
     public void setPontosDeAtaque(int pontosDeAtaque) {
-        this.pontosDeAtaque = pontosDeAtaque;
+        this.pontosDeAtaque = pontosDeAtaque + armaUtilizada.getAdicionalAtaque();
     }
 
     public int getPontosDeAtaque() {
@@ -27,7 +27,7 @@ public class Personagem {
     }
 
     public void setPontosDeDefesa(float pontosDeDefesa) {
-        this.pontosDeDefesa = pontosDeDefesa;
+        this.pontosDeDefesa = pontosDeDefesa + armaUtilizada.getAdicionalDefesa();
     }
 
     public float getPontosDeDefesa() {
