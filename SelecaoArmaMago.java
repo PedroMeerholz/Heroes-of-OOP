@@ -19,31 +19,40 @@ public class SelecaoArmaMago {
 
         if(armaPersonagem < 1 || armaPersonagem > 2){
             boolean condicao = false;
+
             while(condicao == false) {
                 System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                 System.out.print("\nN° Selecao: ");
                 armaPersonagem = scnArmaPersonagem.nextInt();
+
                 if(armaPersonagem == 1 || armaPersonagem == 2){
                     condicao = true;
+                    System.out.print("\n\nNome Do Personagem: ");
+                    String nomePersonagem = scnNomePersonagem.nextLine();
+
                     if(armaPersonagem == 1){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Mago personagemMago = new Mago(nomePersonagem, new Varinha());
+                        System.out.println(personagemMago);
                     } else if(armaPersonagem == 2){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Mago personagemMago = new Mago(nomePersonagem, new Cajado());
+                        System.out.println(personagemMago);
                     }
                 }
             }
-        } else if(armaPersonagem == 1){
+        } else {
             System.out.print("\n\nNome Do Personagem: ");
             String nomePersonagem = scnNomePersonagem.nextLine();
-            Mago personagemMago = new Mago(nomePersonagem, new Varinha());
-        } else if(armaPersonagem == 2){
-            System.out.print("\n\nNome Do Personagem: ");
-            String nomePersonagem = scnNomePersonagem.nextLine();
-            Mago personagemMago = new Mago(nomePersonagem, new Cajado());
+
+            if(armaPersonagem == 1){
+                Mago personagemMago = new Mago(nomePersonagem, new Varinha());
+                System.out.println(personagemMago);
+            } else if(armaPersonagem == 2){
+                Mago personagemMago = new Mago(nomePersonagem, new Cajado());
+                System.out.println(personagemMago);
+            }
         }
+        
+        scnArmaPersonagem.close();
+        scnNomePersonagem.close();
     }
 }

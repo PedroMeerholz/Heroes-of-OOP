@@ -19,31 +19,40 @@ public class SelecaoArmaGuerreiro {
 
         if(armaPersonagem < 1 || armaPersonagem > 2){
             boolean condicao = false;
+
             while(condicao == false) {
                 System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                 System.out.print("\nN° Selecao: ");
                 armaPersonagem = scnArmaPersonagem.nextInt();
+
                 if(armaPersonagem == 1 || armaPersonagem == 2){
                     condicao = true;
+                    System.out.print("\n\nNome Do Personagem: ");
+                    String nomePersonagem = scnNomePersonagem.nextLine();
+
                     if(armaPersonagem == 1){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Espada());
+                        System.out.println(personagemGuerreiro);
                     } else if(armaPersonagem == 2){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Machado());
+                        System.out.println(personagemGuerreiro);
                     }
                 }
             }
-        } else if(armaPersonagem == 1){
+        } else {
             System.out.print("\n\nNome Do Personagem: ");
             String nomePersonagem = scnNomePersonagem.nextLine();
-            Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Espada());
-        } else if(armaPersonagem == 2){
-            System.out.print("\n\nNome Do Personagem: ");
-            String nomePersonagem = scnNomePersonagem.nextLine();
-            Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Machado());
+
+            if(armaPersonagem == 1){
+                Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Espada());
+                System.out.println(personagemGuerreiro);
+            } else if(armaPersonagem == 2){
+                Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Machado());
+                System.out.println(personagemGuerreiro);
+            }
         }
+
+        scnArmaPersonagem.close();
+        scnNomePersonagem.close();
     }       
 }

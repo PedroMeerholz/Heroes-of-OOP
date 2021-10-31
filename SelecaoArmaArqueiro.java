@@ -19,31 +19,40 @@ public class SelecaoArmaArqueiro {
 
         if(armaPersonagem < 1 || armaPersonagem > 2){
             boolean condicao = false;
+
             while(condicao == false) {
                 System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                 System.out.print("\nN° Selecao: ");
                 armaPersonagem = scnArmaPersonagem.nextInt();
+
                 if(armaPersonagem == 1 || armaPersonagem == 2){
                     condicao = true;
+                    System.out.print("\n\nNome Do Personagem: ");
+                    String nomePersonagem = scnNomePersonagem.nextLine();
+
                     if(armaPersonagem == 1){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
+                        System.out.println(personagemArqueiro);
                     } else if(armaPersonagem == 2){
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
                         Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new Balestra());
+                        System.out.println(personagemArqueiro);
                     }
                 }
             }
-        } else if(armaPersonagem == 1){
+        } else {
             System.out.print("\n\nNome Do Personagem: ");
             String nomePersonagem = scnNomePersonagem.nextLine();
-            Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
-        } else if(armaPersonagem == 2){
-            System.out.print("\n\nNome Do Personagem: ");
-            String nomePersonagem = scnNomePersonagem.nextLine();
-            Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new Balestra());
+
+            if(armaPersonagem == 1){
+                Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
+                System.out.println(personagemArqueiro);
+            } else if(armaPersonagem == 2){
+                Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new Balestra());
+                System.out.println(personagemArqueiro);
+            }
         }
+        
+        scnArmaPersonagem.close();
+        scnNomePersonagem.close();
     }
 }
