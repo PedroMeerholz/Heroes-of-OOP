@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     private String borda = "-";
-    Scanner scnNomePersonagem = new Scanner(System.in);
+    private Scanner scnNomePersonagem = new Scanner(System.in);
 
     public int menuInicial() {
         System.out.println("Heroes of OOP\n\n");
