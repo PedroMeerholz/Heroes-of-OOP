@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Menu {
 
     private String borda = "-";
-    private Scanner scnNomePersonagem = new Scanner(System.in);
 
     public int menuInicial() {
         System.out.println("Heroes of OOP\n\n");
@@ -13,15 +12,14 @@ public class Menu {
         System.out.println("2\t\tSair do Jogo");
         System.out.print("\nN° Selecao: ");
     
-        Scanner selecaoMenuInicial = new Scanner(System.in);
-        int opcaoInicial = selecaoMenuInicial.nextInt();
+        int opcaoInicial = selecionaOpcaoMenu();
     
         if(opcaoInicial < 1 || opcaoInicial > 2) {
             System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
             boolean condicao = false;
             while(condicao == false) {
                 System.out.print("\nN° Selecao: ");
-                opcaoInicial = selecaoMenuInicial.nextInt();
+                opcaoInicial = selecionaOpcaoMenu();
                 if(opcaoInicial == 1 || opcaoInicial == 2) {
                     condicao = true;
                     if(opcaoInicial == 1){
@@ -49,15 +47,14 @@ public class Menu {
         System.out.println("2\t\tSair do Jogo");
         System.out.print("\nN° Selecao: ");
 
-        Scanner selecaoMenuSecundario = new Scanner(System.in);
-        int opcaoSecundaria = selecaoMenuSecundario.nextInt();
+        int opcaoSecundaria = selecionaOpcaoMenu();
 
         if(opcaoSecundaria < 1 || opcaoSecundaria > 2) {
             System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
             boolean condicao = false;
             while(condicao == false) {
                 System.out.print("\nN° Selecao: ");
-                opcaoSecundaria = selecaoMenuSecundario.nextInt();
+                opcaoSecundaria = selecionaOpcaoMenu();
                 if(opcaoSecundaria == 1 || opcaoSecundaria == 2) {
                     condicao = true;
                     if(opcaoSecundaria == 1) {
@@ -86,15 +83,14 @@ public class Menu {
         System.out.println("3\t\tArqueiro");
         System.out.print("\nN° Selecao: ");
 
-        Scanner scnClassePersonagem = new Scanner(System.in);
-        int classePersonagem = scnClassePersonagem.nextInt();
+        int classePersonagem = selecionaOpcaoMenu();
         
         if(classePersonagem < 1 || classePersonagem > 3){
             System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
             boolean condicao = false;
             while(condicao == false) {
                 System.out.print("\nN° Selecao: ");
-                classePersonagem = scnClassePersonagem.nextInt();
+                classePersonagem = selecionaOpcaoMenu();
                 if(classePersonagem == 1 || classePersonagem == 2 || classePersonagem == 3){
                     condicao = true;
                     if(classePersonagem == 1){
@@ -127,8 +123,7 @@ public class Menu {
             System.out.println("2\t\tMachado\t\t+17\t\t\t+8");
             System.out.print("\nN° Selecao: ");
     
-            Scanner scnArmaPersonagem = new Scanner(System.in);
-            int armaPersonagem = scnArmaPersonagem.nextInt();
+            int armaPersonagem = selecionaAmaPersonagem();
     
             if(armaPersonagem < 1 || armaPersonagem > 2){
                 boolean condicao = false;
@@ -136,35 +131,22 @@ public class Menu {
                 while(condicao == false) {
                     System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                     System.out.print("\nN° Selecao: ");
-                    armaPersonagem = scnArmaPersonagem.nextInt();
+                    armaPersonagem = selecionaAmaPersonagem();
     
                     if(armaPersonagem == 1 || armaPersonagem == 2){
                         condicao = true;
-                        System.out.print("\n\nNome Do Personagem: ");
-                        String nomePersonagem = scnNomePersonagem.nextLine();
     
                         if(armaPersonagem == 1){
-                            // Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Espada());
-                            // System.out.println(personagemGuerreiro);
                             return 1;
                         } else if(armaPersonagem == 2){
-                            // Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Machado());
-                            // System.out.println(personagemGuerreiro);
                             return 2;
                         }
                     }
                 }
-            } else {
-                System.out.print("\n\nNome Do Personagem: ");
-                String nomePersonagem = scnNomePersonagem.nextLine();
-    
+            } else {  
                 if(armaPersonagem == 1){
-                    // Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Espada());
-                    // System.out.println(personagemGuerreiro);
                     return 1;
                 } else if(armaPersonagem == 2){
-                    // Guerreiro personagemGuerreiro = new Guerreiro(nomePersonagem, new Machado());
-                    // System.out.println(personagemGuerreiro);
                     return 2;
                 }
             }
@@ -182,8 +164,7 @@ public class Menu {
         System.out.println("2\t\tBalestra\t\t+15\t\t\t+10");
         System.out.print("\nN° Selecao: ");
 
-        Scanner scnArmaPersonagem = new Scanner(System.in);
-        int armaPersonagem = scnArmaPersonagem.nextInt();
+        int armaPersonagem = selecionaAmaPersonagem();
 
         if(armaPersonagem < 1 || armaPersonagem > 2){
             boolean condicao = false;
@@ -191,35 +172,21 @@ public class Menu {
             while(condicao == false) {
                 System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                 System.out.print("\nN° Selecao: ");
-                armaPersonagem = scnArmaPersonagem.nextInt();
+                armaPersonagem = selecionaAmaPersonagem();
 
                 if(armaPersonagem == 1 || armaPersonagem == 2){
                     condicao = true;
-                    System.out.print("\n\nNome Do Personagem: ");
-                    String nomePersonagem = scnNomePersonagem.nextLine();
-
                     if(armaPersonagem == 1){
-                        // Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
-                        // System.out.println(personagemArqueiro);
                         return 1;
                     } else if(armaPersonagem == 2){
-                        // Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new Balestra());
-                        // System.out.println(personagemArqueiro);
                         return 2;
                     }
                 }
             }
         } else {
-            System.out.print("\n\nNome Do Personagem: ");
-            String nomePersonagem = scnNomePersonagem.nextLine();
-
             if(armaPersonagem == 1){
-                // Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
-                // System.out.println(personagemArqueiro);
                 return 1;
             } else if(armaPersonagem == 2){
-                // Arqueiro personagemArqueiro = new Arqueiro(nomePersonagem, new Balestra());
-                // System.out.println(personagemArqueiro);
                 return 2;
             }
         }
@@ -237,46 +204,29 @@ public class Menu {
         System.out.println("2\t\tCajado\t\t+13\t\t\t+12");
         System.out.print("\nN° Selecao: ");
 
-        Scanner scnArmaPersonagem = new Scanner(System.in);
-        int armaPersonagem = scnArmaPersonagem.nextInt();
+        int armaPersonagem = selecionaAmaPersonagem();
         
-        Scanner scnNomePersonagem = new Scanner(System.in);
-
         if(armaPersonagem < 1 || armaPersonagem > 2){
             boolean condicao = false;
 
             while(condicao == false) {
                 System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
                 System.out.print("\nN° Selecao: ");
-                armaPersonagem = scnArmaPersonagem.nextInt();
+                armaPersonagem = selecionaAmaPersonagem();
 
                 if(armaPersonagem == 1 || armaPersonagem == 2){
                     condicao = true;
-                    System.out.print("\n\nNome Do Personagem: ");
-                    String nomePersonagem = scnNomePersonagem.nextLine();
-
                     if(armaPersonagem == 1){
-                        // Mago personagemMago = new Mago(nomePersonagem, new Varinha());
-                        // System.out.println(personagemMago);
                         return 1;
                     } else if(armaPersonagem == 2){
-                        // Mago personagemMago = new Mago(nomePersonagem, new Cajado());
-                        // System.out.println(personagemMago);
                         return 2;
                     }
                 }
             }
         } else {
-            System.out.print("\n\nNome Do Personagem: ");
-            String nomePersonagem = scnNomePersonagem.nextLine();
-
             if(armaPersonagem == 1){
-                // Mago personagemMago = new Mago(nomePersonagem, new Varinha());
-                // System.out.println(personagemMago);
                 return 1;
             } else if(armaPersonagem == 2){
-                // Mago personagemMago = new Mago(nomePersonagem, new Cajado());
-                // System.out.println(personagemMago);
                 return 2;
             }
         }
@@ -284,11 +234,26 @@ public class Menu {
         return 0;
     }
 
+    public int selecionaOpcaoMenu() {
+        Scanner scnOpcaoMenu = new Scanner(System.in);
+        int opcao = scnOpcaoMenu.nextInt();
+
+        return opcao;
+    }
+    
     public String selecionaNomePersonagem() {
+        Scanner scnNomePersonagem = new Scanner(System.in);
         System.out.print("\n\nNome Do Personagem: ");
         String nomePersonagem = scnNomePersonagem.nextLine();
 
         return nomePersonagem;
+    }
+
+    public int selecionaAmaPersonagem() {
+        Scanner scnArmaPersonagem = new Scanner(System.in);
+        int armaPersonagem = scnArmaPersonagem.nextInt();
+
+        return armaPersonagem;
     }
 }
  
