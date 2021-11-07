@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Dragao extends Personagem {
 
     public Dragao(String nomePersonagem, Arma armaUtilizada) {
@@ -5,6 +8,13 @@ public class Dragao extends Personagem {
         setPontosDeAtaque(30);
         setPontosDeDefesa(30);
         setPontosDeVida(300);
+    }
+    
+    public int alvoDragao(ArrayList<Personagem> arrayList) {;
+        Random escolheAlvo = new Random();
+        int alvo = escolheAlvo.nextInt(0, arrayList.size());
+        
+        return alvo;
     }
 
     @Override
