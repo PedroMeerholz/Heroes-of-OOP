@@ -90,17 +90,17 @@ public class RPG {
                         }
                     } else {
                         personagem.defender();
-                    }
+                    } // Fim if/else
                 } // Fim forEach
 
                 // Seleciona o alvo do dragão aleatoriamente
                 dragao.atacar(dragao, personagens.get(dragao.alvoDragao(personagens)));
 
-                // Verifica a vida dos personagens
-                for (Personagem personagem : personagens) {
-                    if(personagem.pontosDeVida <= 0) {
-                        System.out.printf("O personagem %s morreu", personagem.nomePersonagem);
-                        personagens.remove(personagem);
+                // // Verifica a vida dos personagens
+                for(int i = 0; i < personagens.size(); i++) {
+                    if(personagens.get(i).pontosDeVida <= 0) {
+                        System.out.printf("O personagem %s morreu", personagens.get(i).nomePersonagem);
+                        personagens.remove(i);
                     }
                 } // Fim forEach
 
@@ -109,7 +109,7 @@ public class RPG {
                     if(personagem.pontosDeDefesa > defesaInicial) {
                         personagem.pontosDeDefesa -= (defesaInicial * 0.1);
                     }
-                } // Fim for Each
+                } // Fim forEach
             } // fim while jogo
         } // fim if jogo
     } // fim método main
