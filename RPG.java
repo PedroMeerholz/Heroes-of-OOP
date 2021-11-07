@@ -110,6 +110,10 @@ public class RPG {
                         personagem.pontosDeDefesa -= (defesaInicial * 0.1);
                     }
                 } // Fim forEach
+
+                if(personagens.size() == 0) {
+                    System.out.println("Você não derrotou LazyProg, tente novamente em sua reencarnação!");
+                }
             } // fim while jogo
         } // fim if jogo
     } // fim método main
