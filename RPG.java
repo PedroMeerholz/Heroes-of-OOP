@@ -80,13 +80,14 @@ public class RPG {
             while(dragao.pontosDeVida > 0 && personagens.size() > 0) {
                 interfaceJogo.contadorDeTurno();
                 for (Personagem personagem : personagens) {
-                    System.out.printf("\nPersonagem Selecionado: %s\n", personagem.nomePersonagem);
+                    System.out.printf("\n\nPersonagem Selecionado: %s\n", personagem.nomePersonagem);
                     int opcaoTurno = interfaceJogo.turnoPersonagem();
     
                     if(opcaoTurno == 1) {
                         personagem.atacar(personagem, dragao);
                         if(dragao.pontosDeVida <= 0) {
-                            System.out.println("Você derrotou LazyProg, agora o mundo pode viver em paz novamente!");
+                            System.out.println("\nVocê derrotou LazyProg, agora o mundo pode viver em paz novamente!");
+                            break;
                         }
                     } else {
                         personagem.defender();
@@ -96,7 +97,17 @@ public class RPG {
                 // Seleciona o alvo do dragão aleatoriamente
                 dragao.atacar(dragao, personagens.get(dragao.alvoDragao(personagens)));
 
-                // // Verifica a vida dos personagens
+                // Verifica se o jogador quer prosseguir com o jogo no final do turno
+                String finalizaJogo = interfaceJogo.finalizarJogo();
+                if(finalizaJogo.equals("S") || finalizaJogo.equals("s")) {
+                    System.out.println("Jogo Finalizado...");
+
+                    break;
+                } else {
+                    System.out.println("Prosseguindo...\n");
+                } // Fim if/else
+
+                // Verifica a vida dos personagens
                 for(int i = 0; i < personagens.size(); i++) {
                     if(personagens.get(i).pontosDeVida <= 0) {
                         System.out.printf("O personagem %s morreu", personagens.get(i).nomePersonagem);
@@ -111,6 +122,7 @@ public class RPG {
                     }
                 } // Fim forEach
 
+                // Mensagem em caso de derrota do usuário
                 if(personagens.size() == 0) {
                     System.out.println("Você não derrotou LazyProg, tente novamente em sua reencarnação!");
                 }

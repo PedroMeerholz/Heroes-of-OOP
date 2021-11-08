@@ -57,7 +57,7 @@ public class Personagem  implements AcoesPersonagem {
         float vidaAlvo = alvo.getPontosDeVida() - dano;
         alvo.setPontosDeVida(vidaAlvo);
 
-        System.out.printf("\nO personagem %s, atacou %s!\nDano Causado: %.1f\nVida atual de %s: %.1f\n\n", atacante.nomePersonagem, alvo.nomePersonagem, dano, alvo.nomePersonagem, alvo.pontosDeVida);
+        System.out.printf("\nO personagem %s, atacou %s!\nDano Causado: %.1f\nVida atual de %s: %.1f\n", atacante.nomePersonagem, alvo.nomePersonagem, dano, alvo.nomePersonagem, alvo.pontosDeVida);
     }
 
     @Override

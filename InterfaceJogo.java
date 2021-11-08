@@ -7,12 +7,12 @@ public class InterfaceJogo {
     public  void mensagemInicial() {
         System.out.println("\n" + this.borda.repeat(62));
         System.out.println("\nHeroes of OOP\n\n");
-        System.out.println("Você encontrou com o dragão LazyProg, derrote-o para vencer o jogo!\n");
+        System.out.println("Você encontrou com o dragão LazyProg, derrote-o para vencer o jogo!\n\n");
     } // fim método mensagemInicial
 
     public void contadorDeTurno() {
         turno += 1;
-        System.out.printf("\n%d° Turno\n\n", this.turno);
+        System.out.printf("\n%d° Turno\n", this.turno);
     } // fim método contadorDeTurno
 
     public int turnoPersonagem() {
@@ -44,4 +44,29 @@ public class InterfaceJogo {
 
         return opcao;
     } // fim método turnoPersonagem
+
+    public String finalizarJogo() {
+        System.out.print("\n\nDeseja sair do jogo(S/N)? Digite Aqui: ");
+
+        Scanner scnOpcao = new Scanner(System.in);
+        String opcao = scnOpcao.nextLine();
+
+        if(opcao.equals("S") || opcao.equals("s") || opcao.equals("N") || opcao.equals("n")) {
+            return opcao;
+        } else{
+            System.out.println("[ERRO]OPÇÃO NÃO RECONHECIDA");
+            boolean condicao = false;
+            while(condicao == false) {
+                System.out.print("\n\nDeseja sair do jogo(S/N)? Digite Aqui: ");
+                opcao = scnOpcao.nextLine();
+                
+                if(opcao.equals("S") || opcao.equals("s") || opcao.equals("N") || opcao.equals("n")) {
+                    condicao = true;
+                    return opcao;
+                } 
+            }
+        }
+
+        return "";
+    }
 } // fim método main
