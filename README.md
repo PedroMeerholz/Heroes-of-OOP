@@ -2,10 +2,10 @@
 Jogo criado com base em um trabalho da graduação em Análise e Desenvolvimento de Sistemas, na matéria de Programação Orientada a Objetos
 
 # Instruções Iniciais
- - Ao iniciar o programa, selecione a opção "Iniciar Jogo";
- - Selecione a opção "Criar Personagem";
- - Selecione o tipo de personagem, indique seu nome e escolha a arma que será utilizada;
- - Caso queira, podem ser criados até três personagens por jogo;
+  - Ao iniciar o programa, selecione a opção "Iniciar Jogo";
+  - Selecione a opção "Criar Personagem";
+  - Selecione o tipo de personagem, indique seu nome e escolha a arma que será utilizada;
+  - Caso queira, podem ser criados até três personagens por jogo;
 
 # Instruções do Jogo
  - O jogo é realizado em turnos, sendo que o jogador começa jogando;
