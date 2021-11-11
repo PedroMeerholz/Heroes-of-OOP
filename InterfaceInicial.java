@@ -35,7 +35,7 @@ public class InterfaceInicial {
             return 2;
         }
 
-        return 0;
+        return -1;
     }
 
     public int menuSecundario() {
@@ -69,7 +69,8 @@ public class InterfaceInicial {
         } else if(opcaoSecundaria == 2) {
             return 2;
         }
-        return 0;
+
+        return -1;
     }
 
     public int menuSelecaoDeClasse() {
@@ -110,7 +111,7 @@ public class InterfaceInicial {
             return 3;
         }
         
-        return 0;
+        return -1;
     }
 
     public int menuSelecionaArmaGuerreiro() {
@@ -151,7 +152,7 @@ public class InterfaceInicial {
                 }
             }
         
-        return 0;
+        return -1;
     }
 
     public int menuSelecionaArmaArqueiro() {
@@ -191,7 +192,7 @@ public class InterfaceInicial {
             }
         }
 
-        return 0;
+        return -1;
     }
 
     public int menuSelecionaArmaMago() {
@@ -231,7 +232,7 @@ public class InterfaceInicial {
             }
         }
 
-        return 0;
+        return -1;
     }
 
     public String repeteCriacaoPersonagem() {

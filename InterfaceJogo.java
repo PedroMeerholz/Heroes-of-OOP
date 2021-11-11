@@ -35,6 +35,7 @@ public class InterfaceJogo {
 
                 if(opcao == 1 || opcao == 2){
                     condicao = true;
+
                     return opcao;
                 }
             } // fim while
@@ -62,6 +63,7 @@ public class InterfaceJogo {
                 
                 if(opcao.equals("S") || opcao.equals("s") || opcao.equals("N") || opcao.equals("n")) {
                     condicao = true;
+                    
                     return opcao;
                 } 
             }
