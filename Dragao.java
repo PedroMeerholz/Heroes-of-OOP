@@ -12,7 +12,7 @@ public class Dragao extends Personagem {
     
     public int alvoDragao(ArrayList<Personagem> arrayList) {;
         Random escolheAlvo = new Random();
-        int alvo = escolheAlvo.nextInt(0, arrayList.size());
+        int alvo = escolheAlvo.nextInt(arrayList.size());
         
         return alvo;
     }
