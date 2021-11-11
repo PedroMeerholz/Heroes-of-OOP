@@ -97,6 +97,27 @@ public class RPG {
                 // Seleciona o alvo do dragão aleatoriamente
                 dragao.atacar(dragao, personagens.get(dragao.alvoDragao(personagens)));
 
+                // Remove o bônus de defesa caso necessário
+                for (Personagem personagem : personagens) {
+                    if(personagem.pontosDeDefesa > defesaInicial) {
+                        personagem.pontosDeDefesa -= (defesaInicial * 0.1);
+                    }
+                } // Fim forEach
+
+                // Verifica a vida dos personagens
+                for(int i = 0; i < personagens.size(); i++) {
+                    if(personagens.get(i).pontosDeVida <= 0) {
+                        System.out.printf("\n\nO personagem %s morreu\n", personagens.get(i).nomePersonagem);
+                        personagens.remove(i);
+                    }
+                } // Fim forEach
+                
+                // Mensagem em caso de derrota do usuário
+                if(personagens.size() == 0) {
+                    System.out.println("Você não derrotou LazyProg, tente novamente em sua próxima reencarnação!");
+                    break;
+                }
+
                 // Verifica se o jogador quer prosseguir com o jogo no final do turno
                 String finalizaJogo = interfaceJogo.finalizarJogo();
                 if(finalizaJogo.equals("S") || finalizaJogo.equals("s")) {
@@ -105,27 +126,7 @@ public class RPG {
                     break;
                 } else {
                     System.out.println("Prosseguindo...\n");
-                } // Fim if/else
-
-                // Verifica a vida dos personagens
-                for(int i = 0; i < personagens.size(); i++) {
-                    if(personagens.get(i).pontosDeVida <= 0) {
-                        System.out.printf("O personagem %s morreu", personagens.get(i).nomePersonagem);
-                        personagens.remove(i);
-                    }
-                } // Fim forEach
-
-                // Remove o bônus de defesa caso necessário
-                for (Personagem personagem : personagens) {
-                    if(personagem.pontosDeDefesa > defesaInicial) {
-                        personagem.pontosDeDefesa -= (defesaInicial * 0.1);
-                    }
-                } // Fim forEach
-
-                // Mensagem em caso de derrota do usuário
-                if(personagens.size() == 0) {
-                    System.out.println("Você não derrotou LazyProg, tente novamente em sua reencarnação!");
-                }
+                } // Fim if/else 
             } // fim while jogo
         } // fim if jogo
     } // fim método main
