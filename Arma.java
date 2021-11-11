@@ -1,4 +1,4 @@
-public class Arma {
+public abstract class Arma {
     protected String nomeArma;
     protected int adicionalAtaque;
     protected int adicionalDefesa;

@@ -1,4 +1,4 @@
-public class Personagem  implements AcoesPersonagem {
+public abstract class Personagem  implements AcoesPersonagem {
     protected String nomePersonagem;
     protected int pontosDeAtaque;
     protected float pontosDeDefesa;
