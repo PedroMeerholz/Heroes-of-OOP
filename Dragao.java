@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Dragao extends Personagem {
 
-    public Dragao(String nomePersonagem, Arma armaUtilizada) {
-        super("LazyProg", new Garra());
+    public Dragao() {
+        super();
         setPontosDeAtaque(30);
         setPontosDeDefesa(30);
         setPontosDeVida(300);
@@ -19,7 +19,7 @@ public class Dragao extends Personagem {
 
     @Override
     public void atacar(Personagem atacante, Personagem alvo) {
-        float dano = atacante.getPontosDeAtaque() - alvo.getPontosDeDefesa();
+        float dano = atacante.getPontosDeAtaque() - alvo.getPoderDeDefesa();
 
         if(dano > 0) {
             float vidaAlvo = alvo.getPontosDeVida() - dano;

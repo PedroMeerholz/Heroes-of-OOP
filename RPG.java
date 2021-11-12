@@ -8,10 +8,10 @@ public class RPG {
         int menuSecundario;
         int menuSelecaoDeClasse;
         int menuSelecionaArma;
-        Personagem guerreiro = new Guerreiro("", new Machado());
-        Personagem mago = new Mago("", new Varinha());
-        Personagem arqueiro = new Arqueiro("J", new ArcoLongo());
-        Dragao dragao = new Dragao("LazyProg", new Garra());
+        Personagem guerreiro = new Guerreiro();
+        Personagem mago = new Mago();
+        Personagem arqueiro = new Arqueiro();
+        Dragao dragao = new Dragao();
         ArrayList<Personagem> personagens = new ArrayList<Personagem>();
         
         while(personagens.size() < 3) {
@@ -26,9 +26,13 @@ public class RPG {
                         menuSelecionaArma = menu.menuSelecionaArmaGuerreiro();
     
                         if(menuSelecionaArma == 1) {
-                            guerreiro = new Guerreiro(nomePersonagem, new Espada());
+                            guerreiro = new Guerreiro();
+                            guerreiro.setNomePersonagem(nomePersonagem);
+                            guerreiro.setArmaUtilizada(new Espada());
                         } else {
-                            guerreiro = new Guerreiro(nomePersonagem, new Machado());
+                            guerreiro = new Guerreiro();
+                            guerreiro.setNomePersonagem(nomePersonagem);
+                            guerreiro.setArmaUtilizada(new Machado());
                         } // Fim if/else selecionaArma
                         personagens.add(guerreiro);
                         System.out.println(guerreiro);
@@ -36,9 +40,13 @@ public class RPG {
                         menuSelecionaArma = menu.menuSelecionaArmaMago();
     
                         if(menuSelecionaArma == 1) {
-                            mago = new Mago(nomePersonagem, new Varinha());
+                            mago = new Mago();
+                            mago.setNomePersonagem(nomePersonagem);
+                            mago.setArmaUtilizada(new Varinha());
                         } else {
-                            mago = new Mago(nomePersonagem, new Cajado());
+                            mago = new Mago();
+                            mago.setNomePersonagem(nomePersonagem);
+                            mago.setArmaUtilizada(new Cajado());
                         } // Fim if/else selecionaArma
                         personagens.add(mago);
                         System.out.println(mago);
@@ -46,21 +54,28 @@ public class RPG {
                         menuSelecionaArma = menu.menuSelecionaArmaArqueiro();
     
                         if(menuSelecionaArma == 1) {
-                            arqueiro = new Arqueiro(nomePersonagem, new ArcoLongo());
+                            arqueiro = new Arqueiro();
+                            arqueiro.setNomePersonagem(nomePersonagem);
+                            arqueiro.setArmaUtilizada(new ArcoLongo());
                         } else {
-                            arqueiro = new Arqueiro(nomePersonagem, new Balestra());
+                            arqueiro = new Arqueiro();
+                            arqueiro.setNomePersonagem(nomePersonagem);
+                            arqueiro.setArmaUtilizada(new Balestra());
                         } // Fim if/else selecionaArma
                         personagens.add(arqueiro);
                         System.out.println(arqueiro);
                     } // fim if/else menuSelecaoDeClasse
 
-                    String criarOutroPersonagem = menu.repeteCriacaoPersonagem();
-                    if(criarOutroPersonagem.equals("S") || criarOutroPersonagem.equals("s")) {
+                    if(personagens.size() == 3) {
                         continue;
                     } else {
-                        break;
-                    } // fim if/else
-
+                        String criarOutroPersonagem = menu.repeteCriacaoPersonagem();
+                        if(criarOutroPersonagem.equals("S") || criarOutroPersonagem.equals("s")) {
+                            continue;
+                        } else {
+                            break;
+                        } // fim if/else
+                    } // Fim if/else
                 } else {
                     System.out.println("Jogo Finalizado...");
                 } // fim if/else menuSecundario

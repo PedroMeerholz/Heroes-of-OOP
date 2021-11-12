@@ -1,7 +1,8 @@
 public class Arqueiro extends Personagem {
 
-    public Arqueiro(String nomePersonagem, Arma armaUtilizada) {
-        super(nomePersonagem, armaUtilizada);
+    public Arqueiro() {
+        super();
+        setArmaUtilizada(armaUtilizada);
         setPontosDeAtaque(20);
         setPontosDeDefesa(30);
         setPontosDeVida(160);

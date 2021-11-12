@@ -1,13 +1,16 @@
 public abstract class Personagem  implements AcoesPersonagem {
     protected String nomePersonagem;
-    protected int pontosDeAtaque;
-    protected float pontosDeDefesa;
-    protected float pontosDeVida;
     protected Arma armaUtilizada;
+    protected int pontosDeAtaque;
+    protected int adicionalAtaque;
+    protected int poderDeAtaque;
+    protected float pontosDeDefesa;
+    protected float adicionalDefesa;
+    protected float poderDeDefesa;
+    protected float pontosDeVida;
 
-    public Personagem(String nomePersonagem, Arma armaUtilizada) {
-        setNomePersonagem(nomePersonagem);
-        setArmaUtilizada(armaUtilizada);
+    public Personagem() {
+
     }
 
     public void setNomePersonagem(String nomePersonagem) {
@@ -18,20 +21,52 @@ public abstract class Personagem  implements AcoesPersonagem {
         return this.nomePersonagem;
     }
 
+    public void setArmaUtilizada(Arma armaUtilizada) {
+        this.armaUtilizada = armaUtilizada;
+    }
+
+    public String getArmaUtilizada() {
+        return armaUtilizada.getNomeArma();
+    }
+
+    public void setAdicionalAtaque() {
+        this.adicionalAtaque = this.armaUtilizada.getAdicionalAtaque();
+    }
+
     public void setPontosDeAtaque(int pontosDeAtaque) {
-        this.pontosDeAtaque = pontosDeAtaque + armaUtilizada.getAdicionalAtaque();
+        this.pontosDeAtaque = pontosDeAtaque;
     }
 
     public int getPontosDeAtaque() {
         return this.pontosDeAtaque;
     }
 
+    public void setPoderDeAtaque() {
+        this.poderDeAtaque = this.pontosDeAtaque + this.adicionalAtaque;
+    }
+
+    public int getPoderDeAtaque() {
+        return this.poderDeAtaque;
+    }
+
     public void setPontosDeDefesa(float pontosDeDefesa) {
-        this.pontosDeDefesa = pontosDeDefesa + armaUtilizada.getAdicionalDefesa();
+        this.pontosDeDefesa = pontosDeDefesa;
     }
 
     public float getPontosDeDefesa() {
         return this.pontosDeDefesa;
+    }
+
+    public void setAdicionalDefesa() {
+        this.adicionalDefesa = this.armaUtilizada.getAdicionalDefesa();
+    }
+
+    public void setPoderDeDefesa() {
+        this.poderDeDefesa = this.pontosDeDefesa + this.adicionalDefesa;
+    }
+
+    public float getPoderDeDefesa() {
+        return this.poderDeDefesa;
     }
 
     public void setPontosDeVida(float pontosDeVida) {
@@ -42,17 +77,9 @@ public abstract class Personagem  implements AcoesPersonagem {
         return this.pontosDeVida;
     }
 
-    public void setArmaUtilizada(Arma armaUtilizada) {
-        this.armaUtilizada = armaUtilizada;
-    }
-
-    public String getArmaUtilizada() {
-        return armaUtilizada.getNomeArma();
-    }
-
     @Override
     public void atacar(Personagem atacante, Personagem alvo) {
-        float dano = atacante.getPontosDeAtaque() - alvo.getPontosDeDefesa();
+        float dano = atacante.getPoderDeAtaque() - alvo.getPontosDeDefesa();
 
         float vidaAlvo = alvo.getPontosDeVida() - dano;
         alvo.setPontosDeVida(vidaAlvo);
