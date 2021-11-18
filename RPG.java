@@ -17,9 +17,10 @@ public class RPG {
         while(personagens.size() < 3) {
             if(menuInicial == 1) {
                 menuSecundario = menu.menuSecundario();
-                String nomePersonagem = menu.selecionaNomePersonagem();
-    
+                
                 if(menuSecundario == 1) {
+                    String nomePersonagem = menu.selecionaNomePersonagem();
+                    
                     menuSelecaoDeClasse = menu.menuSelecaoDeClasse();
     
                     if(menuSelecaoDeClasse == 1) {
@@ -78,9 +79,11 @@ public class RPG {
                     } // Fim if/else
                 } else {
                     System.out.println("Jogo Finalizado...");
+                    break;
                 } // fim if/else menuSecundario
             } else {
                 System.out.println("Jogo Finalizado...");
+                break;
             } // fim if/else menuInicial
         }
 

@@ -79,7 +79,7 @@ public abstract class Personagem  implements AcoesPersonagem {
 
     @Override
     public void atacar(Personagem atacante, Personagem alvo) {
-        float dano = atacante.getPoderDeAtaque() - alvo.getPontosDeDefesa();
+        float dano = atacante.getPoderDeAtaque() - alvo.getPoderDeDefesa();
 
         float vidaAlvo = alvo.getPontosDeVida() - dano;
         alvo.setPontosDeVida(vidaAlvo);

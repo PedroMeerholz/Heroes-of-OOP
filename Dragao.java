@@ -8,6 +8,7 @@ public class Dragao extends Personagem {
         setPontosDeAtaque(30);
         setPontosDeDefesa(30);
         setPontosDeVida(300);
+        setNomePersonagem("LazyProg");
     }
     
     public int alvoDragao(ArrayList<Personagem> arrayList) {;
