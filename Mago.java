@@ -12,6 +12,6 @@ public class Mago extends Personagem {
     public String toString() {
         return String.format(
             "\nVocê criou um Mago(%s) com os seguintes atributos:\nPontos de Ataque: %d\nPontos de Vida: %.0f\nPontos de Defesa: %.0f",
-            getNomePersonagem(), getPontosDeAtaque(), getPontosDeVida(), getPontosDeDefesa());
+            getNomePersonagem(), getPoderDeAtaque(), getPontosDeVida(), getPoderDeDefesa());
     }
 }
