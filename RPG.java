@@ -112,14 +112,16 @@ public class RPG {
     
                     if(opcaoTurno == 1) {
                         personagem.atacar(personagem, dragao);
-                        if(dragao.pontosDeVida <= 0) {
-                            System.out.println("\nVocê derrotou LazyProg, agora o mundo pode viver em paz novamente!");
-                            break;
-                        }
                     } else {
                         personagem.defender();
                     } // Fim if/else
                 } // Fim forEach
+
+                // Verifica  a vida do dragão
+                if(dragao.pontosDeVida <= 0) {
+                    System.out.println("\nVocê derrotou LazyProg, agora o mundo pode viver em paz novamente!");
+                    break;
+                }
 
                 // Seleciona o alvo do dragão aleatoriamente
                 dragao.atacar(dragao, personagens.get(dragao.alvoDragao(personagens)));
