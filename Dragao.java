@@ -20,7 +20,7 @@ public class Dragao extends Personagem {
 
     @Override
     public void atacar(Personagem atacante, Personagem alvo) {
-        float dano = atacante.getPontosDeAtaque() - alvo.getPoderDeDefesa();
+        float dano = atacante.getPoderDeAtaque() - alvo.getPoderDeDefesa();
 
         if(dano > 0) {
             float vidaAlvo = alvo.getPontosDeVida() - dano;
