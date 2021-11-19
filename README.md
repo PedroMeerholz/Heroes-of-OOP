@@ -19,3 +19,11 @@ Jogo criado com base em um trabalho da graduação em Análise e Desenvolvimento
    - Quando todos os personagens criados forem derrotados;
    - Quando o dragão for derrotado;
    - Quando o jogador decidir sair no meio do jogo;
+
+# Como rodar o Jogo
+ - Faça o download da release Entrega - Estável;
+ - Extraia os arquivos da pasta .zip que foi baixada;
+ - Execute um terminal no diretório que foi extraído;
+ - Digite o comando: javac RPG.java;
+ - E por fim o comando: java RPG;
+ - Agora é só aproveitar o jogo;
