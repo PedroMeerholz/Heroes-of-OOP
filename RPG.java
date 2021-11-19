@@ -2,17 +2,25 @@ import java.util.ArrayList;
 
 public class RPG {
     public static void main(String[] args) {
+        // Instancias dos menus
         InterfaceInicial menu = new InterfaceInicial();
         InterfaceJogo interfaceJogo = new InterfaceJogo();
+
+        // Intâncias das opções de retorno dos menus
         int menuInicial = menu.menuInicial();
         int menuSecundario;
         int menuSelecaoDeClasse;
         int menuSelecionaArma;
+
+        // Intâncias de personagens default
         Personagem guerreiro = new Guerreiro();
         Personagem mago = new Mago();
         Personagem arqueiro = new Arqueiro();
         Dragao dragao = new Dragao();
         ArrayList<Personagem> personagens = new ArrayList<Personagem>();
+
+        // Verificação para iniciar o jogo
+        boolean iniciaJogo = true;
         
         while(personagens.size() < 3) {
             if(menuInicial == 1) {
@@ -78,15 +86,17 @@ public class RPG {
                     } // Fim if/else
                 } else {
                     System.out.println("Jogo Finalizado...");
+                    iniciaJogo = false;
                     break;
                 } // fim if/else menuSecundario
             } else {
                 System.out.println("Jogo Finalizado...");
+                iniciaJogo = false;
                 break;
             } // fim if/else menuInicial
         }
 
-        if(personagens.size() > 0) {
+        if(iniciaJogo == true && personagens.size() > 0) {
             interfaceJogo.mensagemInicial();
 
             float defesaInicial = 0;
