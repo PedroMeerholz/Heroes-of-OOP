@@ -2,7 +2,6 @@ public class Arqueiro extends Personagem {
 
     public Arqueiro() {
         super();
-        setArmaUtilizada(armaUtilizada);
         setPontosDeAtaque(20);
         setPontosDeDefesa(30);
         setPontosDeVida(160);

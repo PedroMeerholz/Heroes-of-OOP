@@ -2,7 +2,6 @@ public class Mago extends Personagem {
 
     public Mago(){
         super();
-        setArmaUtilizada(armaUtilizada);
         setPontosDeAtaque(20);
         setPontosDeDefesa(10);
         setPontosDeVida(200);

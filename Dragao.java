@@ -8,6 +8,7 @@ public class Dragao extends Personagem {
         setPontosDeAtaque(30);
         setPontosDeDefesa(30);
         setPontosDeVida(300);
+        setNomePersonagem("LazyProg");
     }
     
     public int alvoDragao(ArrayList<Personagem> arrayList) {;
@@ -19,7 +20,7 @@ public class Dragao extends Personagem {
 
     @Override
     public void atacar(Personagem atacante, Personagem alvo) {
-        float dano = atacante.getPontosDeAtaque() - alvo.getPoderDeDefesa();
+        float dano = atacante.getPontosDeAtaque() - alvo.getPontosDeDefesa();
 
         if(dano > 0) {
             float vidaAlvo = alvo.getPontosDeVida() - dano;
